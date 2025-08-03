@@ -1,0 +1,99 @@
+﻿@model VehicleLeasingApp.Models.Vehicles
+
+@{
+	ViewData["Title"] = "Create";
+}
+
+<h1>Add New Vehicle</h1>
+
+<hr />
+<div class="row">
+	<div class="col-md-12">
+		<form asp-action="Create">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label asp-for="RegistrationNumber" class="control-label"></label>
+						<input asp-for="RegistrationNumber" class="form-control" />
+						<span asp-validation-for="RegistrationNumber" class="text-danger"></span>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label asp-for="Model" class="control-label"></label>
+						<input asp-for="Model" class="form-control" />
+						<span asp-validation-for="Model" class="text-danger"></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label asp-for="ManufacturerId" class="control-label"></label>
+						<select asp-for="ManufacturerId" class="form-control" asp-items="ViewBag.ManufacturerId"></select>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label asp-for="SupplierId" class="control-label"></label>
+						<select asp-for="SupplierId" class="form-control" asp-items="ViewBag.SupplierId"></select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label asp-for="BranchId" class="control-label"></label>
+						<select asp-for="BranchId" class="form-control" asp-items="ViewBag.BranchId"></select>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label asp-for="ClientId" class="control-label"></label>
+						<select asp-for="ClientId" class="form-control" asp-items="ViewBag.ClientId"></select>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label asp-for="DriverId" class="control-label"></label>
+						<select asp-for="DriverId" class="form-control" asp-items="ViewBag.DriverId"></select>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="form-group">
+						<label asp-for="LeaseStartDate" class="control-label"></label>
+						<input asp-for="LeaseStartDate" class="form-control" />
+						<span asp-validation-for="LeaseStartDate" class="text-danger"></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="form-group">
+						<label asp-for="LeaseEndDate" class="control-label"></label>
+						<input asp-for="LeaseEndDate" class="form-control" />
+						<span asp-validation-for="LeaseEndDate" class="text-danger"></span>
+					</div>
+				</div>
+			</div>
+			<div class="form-group pt-4">
+				<input type="submit" value="Add Vehicle" class="btn btn-primary float-end" />
+				<a class="btn btn-outline-info float-start" asp-action="Index">Cancel</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}

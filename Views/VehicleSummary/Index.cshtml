@@ -1,0 +1,64 @@
+﻿@model VehicleSummaryViewModel
+
+@{
+    ViewData["Title"] = "Vehicle Summary Page";
+}
+
+<h3>Supplier Report</h3>
+<table class="table">
+    <thead style="background-color: #d0ebff">
+        <tr>
+            <th>Supplier</th>
+            <th>Manufacturer</th>
+            <th>Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.supplierSummaries)
+        {
+            <tr>
+                <td>@item.Supplier</td>
+                <td>@item.Manufacturer</td>
+                <td>@item.Count</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Branch Report</h3>
+<table class="table">
+    <thead style="background-color: #d0ebff">
+        <tr>
+            <th>Branch</th>
+            <th>Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.branchSummaries)
+        {
+            <tr>
+                <td>@item.Branch</td>
+                <td>@item.Count</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Client Report</h3>
+<table class="table">
+    <thead style="background-color: #d0ebff">
+        <tr>
+            <th>Client</th>
+            <th>Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.clientSummaries)
+        {
+            <tr>
+                <td>@item.Client</td>
+                <td>@item.Count</td>
+            </tr>
+        }
+    </tbody>
+</table>

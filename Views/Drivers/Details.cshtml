@@ -1,0 +1,37 @@
+﻿@model VehicleLeasingApp.Models.Drivers
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Driver Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FullName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FullName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LicenseNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LicenseNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.LicenseExpiry)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.LicenseExpiry)
+        </dd>
+    </dl>
+</div>
+<div class="row p-3">
+    <div class="form-group">
+        <a class="btn btn-primary float-end" asp-action="Edit" asp-route-id="@Model?.DriverId">Edit Driver</a>
+        <a class="btn btn-outline-info float-start" asp-action="Index">Cancel</a>
+    </div>
+</div>
